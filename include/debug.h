@@ -28,19 +28,19 @@ class Dbg : public L4Re::Util::Dbg
   };
 
 public:
-  Dbg(unsigned long l = Blk_info, char const *subsys = "")
+  Dbg(unsigned long l = Blk_info, char const *subsys = nullptr)
   : L4Re::Util::Dbg(l, "libblock", subsys) {}
 
-  static Dbg warn(char const *subsys = "")
+  static Dbg warn(char const *subsys = nullptr)
   { return Dbg(Blk_warn, subsys); }
 
-  static Dbg info(char const *subsys = "")
+  static Dbg info(char const *subsys = nullptr)
   { return Dbg(Blk_info, subsys); }
 
-  static Dbg trace(char const *subsys = "")
+  static Dbg trace(char const *subsys = nullptr)
   { return Dbg(Blk_trace, subsys); }
 
-  static Dbg steptrace(char const *subsys = "")
+  static Dbg steptrace(char const *subsys = nullptr)
   { return Dbg(Blk_steptrace, subsys); }
 };
 
